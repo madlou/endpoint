@@ -4,7 +4,7 @@ A Spring Boot application that monitors port 80 for incoming webhook events and 
 
 ## Features
 
-- Monitors port 80 for all incoming HTTP requests
+- Monitors port 8080 for all incoming HTTP requests
 - Logs all request details: method, URL, headers, body, timestamp
 - Logs all response status codes
 - Separates webhook logs and application logs into different files
