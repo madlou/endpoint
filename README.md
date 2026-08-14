@@ -75,7 +75,7 @@ Send a test webhook request:
 
 ```bash
 # POST request
-curl -X POST http://localhost/webhook \
+curl -X POST http://localhost:8080/webhook \
   -H "Content-Type: application/json" \
   -d '{"event": "test", "data": "hello"}'
 
@@ -83,7 +83,7 @@ curl -X POST http://localhost/webhook \
 curl http://localhost/health
 
 # PUT request
-curl -X PUT http://localhost/test \
+curl -X PUT http://localhost:8080/test \
   -H "Content-Type: application/json" \
   -d '{"action": "update"}'
 ```
@@ -92,7 +92,7 @@ curl -X PUT http://localhost/test \
 
 Edit `src/main/resources/application.properties` to customize:
 
-- `server.port` - Change the port (default: 80)
+- `server.port` - Change the port (default: 8080)
 - `logging.config` - Point to a custom logback configuration
 - Log file locations in `logback-spring.xml`
 
