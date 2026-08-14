@@ -15,8 +15,6 @@ RUN mkdir -p /app/logs && chown -R appuser:appgroup /app
 
 COPY --from=build /app/target/webhook-monitor-1.0.0.jar app.jar
 
-USER appuser
-
 EXPOSE 8080
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
