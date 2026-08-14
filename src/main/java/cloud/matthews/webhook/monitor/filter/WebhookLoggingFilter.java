@@ -18,12 +18,23 @@ public class WebhookLoggingFilter implements Filter {
 
     private static final Logger logger = LoggerFactory.getLogger(WebhookLoggingFilter.class);
 
+    private static final Set<String> EXCLUDED_PATHS = Set.of(
+            "/api/log/tail",
+            "/log-trail.html"
+    );
+
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
 
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
+
+        String path = httpRequest.getServletPath();
+        if (EXCLUDED_PATHS.contains(path)) {
+            chain.doFilter(request, response);
+            return;
+        }
 
         String method = httpRequest.getMethod();
         String url = httpRequest.getRequestURL().toString();
