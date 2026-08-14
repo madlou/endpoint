@@ -96,6 +96,34 @@ Edit `src/main/resources/application.properties` to customize:
 - `logging.config` - Point to a custom logback configuration
 - Log file locations in `logback-spring.xml`
 
-## License
+## Frontend
 
-MIT
+### Log Trail
+
+A live log viewer is available at `/log-trail.html` that displays the last 100 request bodies from `webhook-monitor.log` with:
+
+- JSON syntax highlighting
+- Auto-refresh every 3 seconds
+- Only shows "Request Body" lines
+
+Access it at: `http://endpoint.matthews.cloud:8080/log-trail.html`
+
+## Deployment
+
+### Server
+
+- **Domain**: `endpoint.matthews.cloud`
+- **Host port**: `8080`
+- **App port**: `8080` (inside container)
+
+### Docker
+
+```bash
+docker compose up --build -d
+```
+
+### Nginx
+
+Nginx is included in `docker-compose.yml` and proxies `endpoint.matthews.cloud:8080` to the app.
+
+Update `nginx/default.conf` if you change the subdomain.
