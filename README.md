@@ -60,7 +60,13 @@ java -jar target/webhook-monitor-1.0.0.jar
 Since port 80 is a privileged port, you may need to run with sudo:
 
 ```bash
-sudo java -jar target/webhook-monitor-1.0.0.jar
+java -jar target/webhook-monitor-1.0.0.jar
+```
+
+Or you can specify the port to monitor:
+
+```bash
+java -jar target/webhook-monitor-1.0.0.jar --server.port=9090
 ```
 
 ## Testing
