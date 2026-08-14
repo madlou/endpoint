@@ -1,0 +1,14 @@
+target/
+.git
+.gitignore
+*.md
+README.md
+NIX.md
+flake.nix
+shell.nix
+logs/
+tmp/
+.vscode/
+.idea/
+*.iml
+*.log

@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  webhook-monitor:
+    build: .
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
+    environment:
+      - TZ=UTC
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "${PORT:-80}:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - webhook-monitor
+    restart: unless-stopped
