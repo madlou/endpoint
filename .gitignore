@@ -1,0 +1,65 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+.factorypath
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Log files
+logs/
+*.log
+
+# Spring Boot
+*.pid
+
+# Temp
+tmp/
+
+# Compiled class files
+*.class
+
+# Keystores
+*.keystore
+
+# Deliberately check in native lib artifacts based on packaging
+# !lib/*.so
+# !lib/*.dll
+
+# Eclipse m2e generated files
+/generated-sources/
+
+# IntelliJ IDEA
+*.jws
+*.swp
+*.swo
+*~
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/nbproject/project.properties
+/nbproject/project.xml
+nbproject/private/
+
+# VS Code
+.launch
